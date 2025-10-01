@@ -1,0 +1,134 @@
+:root {
+            /* Define a basic color scheme */
+            --bg-color: #1a1a2e; /* Dark background */
+            --text-color: #e94560; /* Vibrant red/pink for display */
+            --card-color: #2c2c4d; /* Slightly lighter dark for container */
+            --button-bg: #16213e; /* Darker blue for buttons */
+            --button-hover: #0f3460; /* Dark blue on hover */
+            --button-text: #fff;
+            --lap-bg: #3e4c6b;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--button-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .stopwatch-container {
+            /* Center the stopwatch */
+            text-align: center;
+            background-color: var(--card-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Digital Clock Styling */
+        .display {
+            font-size: 3.5rem; /* font size */
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            /* monospace font for a digital look */
+            font-family: 'monospace', 'Courier New', monospace;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--button-bg);
+        }
+
+        /* Button Layout using Flexbox */
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            flex-grow: 1; /* Equal width for all buttons */
+            padding: 12px 15px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            font-weight: 600;
+        }
+
+        /* Specific Button Colors and Hover Effects */
+        .btn:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+        }
+
+        #startBtn { background-color: #4CAF50; } /* Green */
+        #startBtn:hover { background-color: #45a049; }
+
+        #stopBtn { background-color: #FF5733; } /* Orange/Red */
+        #stopBtn:hover { background-color: #e64a19; }
+
+        #resetBtn { background-color: #5D5D5D; } /* Gray */
+        #resetBtn:hover { background-color: #4a4a4a; }
+
+        #lapBtn { background-color: #337AFF; } /* Blue */
+        #lapBtn:hover { background-color: #2a6ae6; }
+
+        /* Lap Times Styling */
+        .laps-container {
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid var(--lap-bg);
+            padding-top: 15px;
+            text-align: left;
+        }
+
+        .laps-container h3 {
+            margin-top: 0;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--lap-bg);
+            padding-bottom: 5px;
+        }
+
+        #lapsList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #lapsList li {
+            background-color: var(--lap-bg);
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'monospace';
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .display {
+                font-size: 3rem;
+            }
+            .controls {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+            }
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .stopwatch-container {
+                padding: 30px;
+            }
+        }
